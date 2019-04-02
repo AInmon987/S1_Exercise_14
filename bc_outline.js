@@ -82,6 +82,14 @@ function createList(source, outlineList) {
                         outlineList = nestedList;
                   } else {
                         //apend the list item to a higher list
+                        //calculate the difference between the current and previous levels
+                        var levelUp = prevLevel - heaadLevel;
+                        //go up to the higher level
+                        for (var i = 1; i <= levelUp; i++) {
+                              outlineList = outlineList.parentNode.parentNode;
+                              outlineList.appendChild(linkElem);
+
+                        }
 
                   }
 
